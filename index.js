@@ -11,6 +11,14 @@ function generatePassword(
   const symbolsChars = "!@#$%^&*()_+-=";
 
   let allowedChars = "";
+  let password = "";
+
+  allowedChars += includeLowerCase ? lowerCaseChars : "";
+  allowedChars += includeUpperCase ? upperCaseChars : "";
+  allowedChars += includeNumbers ? numbersChars : "";
+  allowedChars += includeSymbols ? symbolsChars : "";
+  console.log(allowedChars);
+
   return "";
 }
 
