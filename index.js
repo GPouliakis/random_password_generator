@@ -17,9 +17,22 @@ function generatePassword(
   allowedChars += includeUpperCase ? upperCaseChars : "";
   allowedChars += includeNumbers ? numbersChars : "";
   allowedChars += includeSymbols ? symbolsChars : "";
+
   console.log(allowedChars);
 
-  return "";
+  if (length <= 6) {
+    return `(passowrd length must be at least 6)`;
+  }
+  if (allowedChars === 0) {
+    return `(At least 1 set of characters needs to be selected)`;
+  }
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * allowedChars.length);
+    password += allowedChars[randomIndex];
+  }
+
+  return password;
 }
 
 const passwordLength = 12;
